@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,5 +14,9 @@ public abstract class StructuralUnit {
     private Long id;
 
     private String name;
+
+    private String head;
+
+    private String email;
 
 }

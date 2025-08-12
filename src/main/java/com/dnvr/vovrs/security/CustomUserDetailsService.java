@@ -21,6 +21,14 @@ public class CustomUserDetailsService implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
+    public User getUserById(Long id){
+        return userRepository.findById(id).orElseThrow();
+    }
+
+    public User getUserByUsername(String email){
+        return userRepository.findByEmail(email).orElseThrow();
+    }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(username)

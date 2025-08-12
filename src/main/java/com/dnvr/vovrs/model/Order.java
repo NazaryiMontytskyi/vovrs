@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "club_order")
 public class Order {
 
     @Id
@@ -21,6 +22,7 @@ public class Order {
     private String description;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "order_type", length = 50, columnDefinition = "varchar(50)")
     private OrderType orderType;
 
     @ManyToOne
@@ -28,6 +30,6 @@ public class Order {
     private Club relatedClub;
 
     @OneToOne
-    @Column(nullable = true)
+    @JoinColumn(name = "related_doc_id", nullable = true)
     private RelatedDocument relatedDocument;
 }

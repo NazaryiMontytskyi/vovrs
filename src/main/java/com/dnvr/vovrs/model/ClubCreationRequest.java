@@ -28,7 +28,7 @@ public class ClubCreationRequest {
     private ClubDirection clubDirection;
 
     @OneToOne
-    @JoinColumn(name = "related_entity_id", nullable = false)
+    @JoinColumn(name = "related_entity_id", nullable = true)
     private RelatedDocument regulation;
 
     @ManyToOne
