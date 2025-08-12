@@ -7,12 +7,9 @@ import com.dnvr.vovrs.model.ClubCreationRequest;
 import com.dnvr.vovrs.security.CustomUserDetailsService;
 import com.dnvr.vovrs.service.ClubService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 

@@ -61,7 +61,7 @@ public class AuthController {
 
         Set<Role> roles = (request.getRoles() == null || request.getRoles().isEmpty()) ?
                 Set.of(Role.ROLE_USER, Role.ROLE_GUEST)
-                : request.getRoles().stream().map(r -> Role.valueOf(r)).collect(Collectors.toSet());
+                : request.getRoles().stream().map(Role::valueOf).collect(Collectors.toSet());
 
         User user = new User(request.getEmail(), request.getName(), request.getSurname(), passwordEncoder.encode(request.getPassword()), roles );
         userRepository.save(user);
